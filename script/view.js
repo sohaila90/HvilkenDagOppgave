@@ -1,8 +1,8 @@
 let weekDay = 5;
-let weekend = 7;
-
+let weekend = 6;
 let correctDay = '';
 let message = "";
+
 updateView();
 function updateView() {
     app.innerHTML = /*html*/`
@@ -11,7 +11,7 @@ function updateView() {
     <h3>1 = mandag og 7 = søndag</h3>
     <input type="number" onchange="writeDay(this.value)">
     <button onclick="dayCheckBtn()">Sjekk</button>
-    <h3>${correctDay}</h3>
+    <h3>${message}</h3>
     <h3>${message}</h3>
     `;
 }
@@ -24,11 +24,12 @@ function writeDay(whatDay) {
 function dayCheckBtn(){
 let number = writeDay();
     if(number == weekend) {
-    console.log('Det er helg!');
-    //  message = "Det er helg!";
+    //  console.log('Det er helg!');
+      message = "Det er helg!";
     }else {
     message = "Det er en ukedag :(";
     }
+    updateView();
 }
 
 // <!-- **5. Hvilken dag er det?**
