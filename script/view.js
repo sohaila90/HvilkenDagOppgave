@@ -1,7 +1,7 @@
 let weekDay = 5;
-let weekend = 6;
-let correctDay = '';
-let message = "";
+let dayInput = 0;
+// let correctDay = '';
+let message1 = "";
 
 updateView();
 function updateView() {
@@ -11,23 +11,24 @@ function updateView() {
     <h3>1 = mandag og 7 = søndag</h3>
     <input type="number" onchange="writeDay(this.value)">
     <button onclick="dayCheckBtn()">Sjekk</button>
-    <h3>${message}</h3>
-    <h3>${message}</h3>
+    <h3>${message1}</h3>
+   
     `;
 }
 
 
 function writeDay(whatDay) {
- weekend = whatDay;
+ dayInput = whatDay;
 
 }
 function dayCheckBtn(){
-let number = writeDay();
-    if(number == weekend) {
+// for(let i = 0; i <7; i++)
+// dayinput er større en 5 derfor kjører if delen ellers kjører else
+    if(dayInput > weekDay) {
     //  console.log('Det er helg!');
-      message = "Det er helg!";
+      message1 = "Det er helg!";
     }else {
-    message = "Det er en ukedag :(";
+    message1 = "Det er en ukedag :(";
     }
     updateView();
 }
